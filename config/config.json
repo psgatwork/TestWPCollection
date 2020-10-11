@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "rotator-one-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/rotatorOne/RotatorOneWebPart.js",
+          "manifest": "./src/webparts/rotatorOne/RotatorOneWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "RotatorOneWebPartStrings": "lib/webparts/rotatorOne/loc/{locale}.js"
+  }
+}
