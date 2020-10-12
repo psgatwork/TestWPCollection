@@ -3,7 +3,7 @@
   "solution": {
     "name": "cc-one-client-side-solution",
     "id": "0f35a884-9a0d-4fc2-8305-33dddfa6f140",
-    "version": "1.0.0.0",
+    "version": "2.0.0.1",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {

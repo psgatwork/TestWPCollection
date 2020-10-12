@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/rotatorOne/RotatorOneWebPart.manifest.json"
         }
       ]
+    },
+    "image-with-buttons-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/imageWithButtons/ImageWithButtonsWebPart.js",
+          "manifest": "./src/webparts/imageWithButtons/ImageWithButtonsWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "RotatorOneWebPartStrings": "lib/webparts/rotatorOne/loc/{locale}.js"
+    "RotatorOneWebPartStrings": "lib/webparts/rotatorOne/loc/{locale}.js",
+    "ImageWithButtonsWebPartStrings": "lib/webparts/imageWithButtons/loc/{locale}.js"
   }
 }
