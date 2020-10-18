@@ -5,7 +5,7 @@ import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
-import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import { BaseClientSideWebPart, WebPartContext } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'ImageWithButtonsWebPartStrings';
 import ImageWithButtons from './components/ImageWithButtons';
@@ -13,6 +13,7 @@ import { IImageWithButtonsProps } from './components/IImageWithButtonsProps';
 
 export interface IImageWithButtonsWebPartProps {
   description: string;
+  currentContext:WebPartContext;
 }
 
 export default class ImageWithButtonsWebPart extends BaseClientSideWebPart<IImageWithButtonsWebPartProps> {
@@ -21,7 +22,8 @@ export default class ImageWithButtonsWebPart extends BaseClientSideWebPart<IImag
     const element: React.ReactElement<IImageWithButtonsProps> = React.createElement(
       ImageWithButtons,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        currentContext: this.context
       }
     );
 
