@@ -4,10 +4,12 @@ import { IImageWithButtonsProps } from './IImageWithButtonsProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { PrimaryButton } from 'office-ui-fabric-react';
 import { FilePicker, IFilePickerResult } from '@pnp/spfx-controls-react/lib/FilePicker';
-import { DisplayMode} from '@microsoft/sp-core-library';
+import { DisplayMode } from '@microsoft/sp-core-library';
 
 export default class ImageWithButtons extends React.Component<IImageWithButtonsProps, {}> {
+
   public render(): React.ReactElement<IImageWithButtonsProps> {
+    let propertyExtender = this._filePickerCons();
     return (
       <div className={styles.imageWithButtons}>
         <div className={styles.container}>
@@ -54,14 +56,8 @@ export default class ImageWithButtons extends React.Component<IImageWithButtonsP
             </div>
           </div>
           <div className={styles.row}>
-            <FilePicker
-              bingAPIKey="<BING API KEY>"
-              accepts={[".gif", ".jpg", ".jpeg", ".bmp", ".dib", ".tif", ".tiff", ".ico", ".png", ".jxr", ".svg"]}
-              buttonIcon="FileImage"
-              onSave={(filePickerResult: IFilePickerResult) => { this.setState({ filePickerResult }) }}
-              onChanged={(filePickerResult: IFilePickerResult) => { this.setState({ filePickerResult }) }}
-              context={this.props.currentContext}
-            />
+            {propertyExtender}
+
           </div>
         </div>
       </div>
@@ -73,12 +69,23 @@ export default class ImageWithButtons extends React.Component<IImageWithButtonsP
     console.log('bt c');
   }
 
-  // private _filePickerCons() {
-  //   if(this.displayMode == DisplayMode.Edit){
-  //     console.log('edit mode');
-  //     return null;
-  //   }else if(this.displayMode == DisplayMode.Read){
-  //     console.log('read mode');
-  //   }
-  // }
+  private _filePickerCons() {
+    console.log('display mode s');
+    if (this.props.currentDisplayMode == DisplayMode.Edit) {
+      console.log('edit mode');
+      return <FilePicker
+        bingAPIKey="<BING API KEY>"
+        accepts={[".gif", ".jpg", ".jpeg", ".bmp", ".dib", ".tif", ".tiff", ".ico", ".png", ".jxr", ".svg"]}
+        buttonIcon="FileImage"
+        onSave={(filePickerResult: IFilePickerResult) => { this.setState({ filePickerResult }) }}
+        onChanged={(filePickerResult: IFilePickerResult) => { this.setState({ filePickerResult }) }}
+        context={this.props.currentContext}
+      />;
+    } else if (this.props.currentDisplayMode == DisplayMode.Read) {
+      console.log('read mode');
+      return null;
+    }
+  }
+
+
 }

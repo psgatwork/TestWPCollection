@@ -10,10 +10,12 @@ import { BaseClientSideWebPart, WebPartContext } from '@microsoft/sp-webpart-bas
 import * as strings from 'ImageWithButtonsWebPartStrings';
 import ImageWithButtons from './components/ImageWithButtons';
 import { IImageWithButtonsProps } from './components/IImageWithButtonsProps';
+import { DisplayMode } from '@microsoft/sp-core-library';
 
 export interface IImageWithButtonsWebPartProps {
   description: string;
-  currentContext:WebPartContext;
+  currentContext: WebPartContext;
+  currentDisplayMode: DisplayMode;
 }
 
 export default class ImageWithButtonsWebPart extends BaseClientSideWebPart<IImageWithButtonsWebPartProps> {
@@ -23,7 +25,8 @@ export default class ImageWithButtonsWebPart extends BaseClientSideWebPart<IImag
       ImageWithButtons,
       {
         description: this.properties.description,
-        currentContext: this.context
+        currentContext: this.context,
+        currentDisplayMode: this.displayMode
       }
     );
 
@@ -36,6 +39,11 @@ export default class ImageWithButtonsWebPart extends BaseClientSideWebPart<IImag
 
   protected get dataVersion(): Version {
     return Version.parse('1.0');
+  }
+
+  protected onDisplayModeChanged(oldDisplayMode: DisplayMode) {
+    this.properties.currentDisplayMode = this.displayMode;
+    this.render();
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
