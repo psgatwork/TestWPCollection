@@ -17,12 +17,30 @@
           "manifest": "./src/webparts/imageWithButtons/ImageWithButtonsWebPart.manifest.json"
         }
       ]
+    },
+    "ootb-web-part-modifier-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/ootbWebPartModifier/OotbWebPartModifierApplicationCustomizer.js",
+          "manifest": "./src/extensions/ootbWebPartModifier/OotbWebPartModifierApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "servic-offerings-poc-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/servicOfferingsPoc/ServicOfferingsPocWebPart.js",
+          "manifest": "./src/webparts/servicOfferingsPoc/ServicOfferingsPocWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "RotatorOneWebPartStrings": "lib/webparts/rotatorOne/loc/{locale}.js",
     "ImageWithButtonsWebPartStrings": "lib/webparts/imageWithButtons/loc/{locale}.js",
-    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
+    "OotbWebPartModifierApplicationCustomizerStrings": "lib/extensions/ootbWebPartModifier/loc/{locale}.js",
+    "ServicOfferingsPocWebPartStrings": "lib/webparts/servicOfferingsPoc/loc/{locale}.js"
   }
 }

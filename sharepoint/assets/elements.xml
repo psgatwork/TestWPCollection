@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="OotbWebPartModifier"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="0a441477-6ca4-4942-a99f-ee8d946d033f"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

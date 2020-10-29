@@ -3,7 +3,7 @@
   "solution": {
     "name": "cc-one-client-side-solution",
     "id": "0f35a884-9a0d-4fc2-8305-33dddfa6f140",
-    "version": "2.0.1.1",
+    "version": "2.0.3.4",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {
@@ -12,7 +12,21 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": ""
-    }
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "00687359-88e6-4e07-8bc6-32ee26b23eae",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/cc-one.sppkg"

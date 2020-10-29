@@ -22,7 +22,10 @@
     "office-ui-fabric-react": "6.214.0",
     "react": "16.8.5",
     "react-awesome-slider": "^4.1.0",
-    "react-dom": "16.8.5"
+    "react-dom": "16.8.5",
+    "@microsoft/decorators": "1.11.0",
+    "@microsoft/sp-dialog": "1.11.0",
+    "@microsoft/sp-application-base": "1.11.0"
   },
   "devDependencies": {
     "@types/react": "16.8.8",
